@@ -1,0 +1,72 @@
+# Introdução prática a Shell Script
+
+Um arquivo em Shell Script ".sh", é um tipo de script que pode ser executado no terminal, tendo as devidas permissões para tal, serve para automatizar tarefas, e pelo que eu vi até agora ele tem suporte para fazer tudo no SO, como fazer atualizações, remover arquivos, limpar a memória, gerar logs, fazer atualizações e fazer download de arquivos, ainda não sei exatamente qual é o limite para esse tipo de tecnologia, só sei que vou usa-lá ao máximo esse semestre, principalmente como forma de otimizar o desempenho do meu computador.
+
+# Permissões
+
+Para que um script em Shell possa ser executado eu tenho que dar permissão para tal atrvés do comando:
+
+	$ chmod 777 <nome.sh>  //não sei exatamente qual é a diferenças entre os dois
+	$ chmod +X <nome.sh>
+
+No Vim
+
+	:!chmod777%
+	! -> força o Vim a excutar o comando
+	% -> faz referência ao arquivo atual
+
+# Comandos básicos
+
+// /aponta para o interpretador do script, usando o path completo
+
+  #!/bin/sh
+
+# Isso é um comentário
+
+  echo "<mensagem>" // /escreve na tela
+
+// /variáveis
+  <nome>=<valor> // /não pode haver espaço entre o nome e o '=' 
+ 
+// /Atribuindo valores de comandos à variáveis
+  
+  1. <nome>=$(<comando>)
+  2. <nome>=`<comando>`
+
+// /Pegando entradas do usuário
+  
+  read <nome_var>
+
+// /Operações aritméticas
+  
+  var=`expr <var> \<op> <var_n>
+  <op> ::= + | - | * | \
+
+// /Condicionais
+  
+  if [ condição ];
+  then
+    comandos..
+  fi
+	//ou
+  if teste CONDIÇÂO
+  then
+    comandos..
+  fi
+  
+// /Operadores de comparação (Less, Greater, Equal)
+
+  -lt	É menor que (LessThan)
+  -gt	É maior que (GreaterThan)
+  -le	É menor igual (LessEqual)
+  -ge	É maior igual (GreaterEqual)
+  -eq	É igual (EQual)
+  -ne	É diferente (NotEqual)
+
+Nota: ainda não sei o contexto de uso desses comandos ou dos tradicionais de comparação
+
+Fontes: 
+  https://www.devmedia.com.br/introducao-ao-shell-script-no-linux/25778
+  https://aurelio.net/shell/canivete/#operadores
+  https://aurelio.net/shell/
+  https://aurelio.net/shell/apostila-introducao-shell.pdf
